@@ -34,7 +34,7 @@ add_executable(cpp_weekly
         template/class_template_test.cc
         template/function_template_test.cc
         class/class_test.cc
-        )
+        strings/string_view_test.cc)
 
 target_link_libraries(
         cpp_weekly
