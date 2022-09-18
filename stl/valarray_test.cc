@@ -1,13 +1,12 @@
+#include <gtest/gtest.h>
 #include <iostream>
 #include <valarray>
 
-int main() {
-  std::valarray<float> v = {1, 2, 3}, w = {7, 8, 9}, s = v + 2.0f * w;
-  v = sin(s);
+TEST(StlTest, ValarrayTest) {
+  std::valarray<int> v = {1, 2, 3}, w = {7, 8, 9}, s = v + 2 * w;
+  // v = sin(s); // = {sin(s[0]), sin(s[1]), sin(s[2])}
 
-  for (float &x : v)
-    std::cout << x << ' ';
-  std::cout << "\n";
-
-  return 0;
+  EXPECT_EQ(s[0], 15);
+  EXPECT_EQ(s[1], 18);
+  EXPECT_EQ(s[2], 21);
 }
