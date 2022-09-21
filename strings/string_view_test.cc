@@ -1,7 +1,7 @@
 //
 // Created by CL on 2022/9/18.
 //
-
+#include "timer.h"
 #include <gtest/gtest.h>
 #include <iostream>
 #include <string>
@@ -28,27 +28,6 @@ TEST(string_view_test, basic) {
 
   EXPECT_TRUE(act_output == oss.str());
 }
-
-class Timer {
-private:
-  std::string Title;
-  std::chrono::high_resolution_clock::time_point Start, Stop;
-
-public:
-  Timer(const std::string &Title) : Title(Title) {
-    Start = std::chrono::high_resolution_clock::now();
-  }
-
-  ~Timer() {stop();}
-
-  void stop() {
-    Stop = std::chrono::high_resolution_clock::now();
-    std::chrono::milliseconds ms = 
-        std::chrono::duration_cast<std::chrono::milliseconds>(Stop - Start);
-
-    std::cout << "Title " << (ms.count()) * 0.001 << "s\n";
-  }
-};
 
 void FunctionWithString(const std::string &Str) {}
 void FunctionWithString(const std::string_view &Sv) {}
