@@ -32,3 +32,21 @@ TEST(std_future_test, basic_test) {
     std::cout << std::async(make_sorted_random, 1000000).get().size() << "\n";
   }
 }
+
+int add(int a, int b) {
+  std::cout << "work thread = " << std::this_thread::get_id() << std::endl;
+  std::this_thread::sleep_for(std::chrono::milliseconds(3000));
+  return a + b;
+}
+
+/*
+  std::launch::deferred 挂起任务。
+*/
+TEST(std_future_test, deferred_task_test) {
+  Timer("future deferred task test.");
+  std::cout << "main thread = " << std::this_thread::get_id() << std::endl;
+  std::future<int> result = std::async(std::launch::deferred, add , 2, 3);
+  std::this_thread::sleep_for(std::chrono::milliseconds(3000));
+
+  std::cout << result.get() << std::endl;
+}
