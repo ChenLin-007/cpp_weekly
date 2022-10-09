@@ -17,3 +17,18 @@ std::set<int> make_sorted_random(const size_t num_elems) {
 
   return retval;
 }
+
+/*
+  async & future
+  std::async 开启一个异步任务，后续调用其结果. 返回一个future 对象。
+
+  如果获取异步任务结果，std::future::get. 阻塞当前任务，知道获取异步任务的结果。
+*/
+TEST(std_future_test, basic_test) {
+  {
+    Timer("std::future");
+    auto f1 = std::async(make_sorted_random, 1000000);
+    f1.get();
+    std::cout << std::async(make_sorted_random, 1000000).get().size() << "\n";
+  }
+}
