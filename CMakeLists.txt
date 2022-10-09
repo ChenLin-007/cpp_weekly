@@ -35,7 +35,7 @@ add_executable(cpp_weekly
         template/function_template_test.cc
         class/class_test.cc
         strings/string_view_test.cc
-        future/future_test.cpp)
+        future/future_test.cc)
 
 include_directories(include)
 
