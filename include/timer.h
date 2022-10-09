@@ -17,19 +17,19 @@ public:
 
   ~Timer() { stop(); }
 
-  uint64_t timeEclipses() {
+  uint64_t eclipse() {
     Stop = std::chrono::high_resolution_clock::now();
-    return std::chrono::duration_cast<std::chrono::milliseconds>(Stop - Start).count();
+    return std::chrono::duration_cast<std::chrono::nanoseconds>(Stop - Start).count();
   }
 
 private:
   void stop() {
     if (Stop == Start)
       Stop = std::chrono::high_resolution_clock::now();
-    std::chrono::milliseconds ms =
-            std::chrono::duration_cast<std::chrono::milliseconds>(Stop - Start);
+    std::chrono::nanoseconds ns =
+            std::chrono::duration_cast<std::chrono::nanoseconds>(Stop - Start);
 #ifndef NDEBUG
-    std::cout << Title << " " << (ms.count()) * 0.001 << "s\n";
+    std::cout << Title << " " << (ns.count()) * 0.001 << "s\n";
 #endif
   }
 };
