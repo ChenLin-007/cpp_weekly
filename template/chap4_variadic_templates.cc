@@ -20,5 +20,5 @@ TEST(chap4_variadic_templates, print_test) {
 
   std::string act_output = testing::internal::GetCapturedStdout();
 
-  EXPECT_TRUE(oss.str(), act_output);
+  EXPECT_TRUE(oss.str() == act_output);
 }
