@@ -34,5 +34,5 @@ TEST(ref_cref_test, basic_test) {
 
   std::string act_output = testing::internal::GetCapturedStdout();
 
-  EXPECT_TURE(oss.str() == act_output);
+  EXPECT_TRUE(oss.str() == act_output);
 }
