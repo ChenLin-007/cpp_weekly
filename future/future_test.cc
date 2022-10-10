@@ -50,3 +50,16 @@ TEST(std_future_test, deferred_task_test) {
 
   std::cout << result.get() << std::endl;
 }
+
+TEST(std_future_test, async_task_test) {
+  Timer("future deferred task test.");
+  std::cout << "\nmain thread = " << std::this_thread::get_id() << std::endl;
+
+  // exection when start.
+  std::future<int> result = std::async(std::launch::async, add, 2, 3);
+  
+  // main thread sleep 3s.
+  std::this_thread::sleep_for(std::chrono::milliseconds(3000));
+
+  std::cout << "sub thread's result = " << result.get() << std::endl;
+}
