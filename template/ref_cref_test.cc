@@ -24,7 +24,7 @@ TEST(ref_cref_test, basic_test) {
   testing::internal::CaptureStdout();
 
   std::cout << "Before function: " << n1 << ' ' << n2 << ' ' << n3 << '\n';
-  oss << "Before function: 10 11 12";
+  oss << "Before function: 10 11 12\n";
 
   bound_f();
   oss << "In function: 1 11 12\n";
