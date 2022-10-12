@@ -54,7 +54,7 @@ findFirstUpper(const std::vector<std::string> &V) {
 
 TEST(std_optional_test, in_place_test) {
   std::vector<std::string> Strs{"Nothing", "found"};
-  std::vector<std::optional<CharInfo>> Res = ::findFirstUpper(Strs);
+  std::vector<std::optional<CharInfo>> Res = findFirstUpper(Strs);
 
   std::stringstream oss;
   testing::internal::CaptureStdout();
