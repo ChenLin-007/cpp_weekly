@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include <optional>
+#include <vector>
 
 TEST(std_optional_test, value_or_test) {
   std::optional<int> offset{10};  // offset 的值只能是10。
