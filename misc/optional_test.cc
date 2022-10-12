@@ -40,7 +40,7 @@ findFirstUpper(const std::vector<std::string> &V) {
     int i;
     for (i = 0; i < T.length(); ++i) {
       if (char c = T[i]; isupper(c)) {
-        Ret.push_back(std::in_place, c, i);
+        Ret.emplace_back(std::in_place, c, i);
         // 使用 std::in_place 指示在原地进行构造对象。
         // push_back 有构造和移动的操作，性能低。
         break; 
