@@ -39,6 +39,7 @@ add_executable(cpp_weekly
         template/chap_1_function_templates.cc
         template/ref_cref_test.cc
         template/chap4_variadic_templates.cc
+        misc/optional_test.cc
         )
 
 include_directories(include)
