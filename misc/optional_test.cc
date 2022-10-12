@@ -61,7 +61,7 @@ TEST(std_optional_test, in_place_test) {
   testing::internal::CaptureStdout();
 
   if (Res[0]) {
-    std::cout << Res[0]->Upper << "at" << Res[0]->Pos << "\n";
+    std::cout << Res[0]->Upper << " at " << Res[0]->Pos << "\n";
   } else {
     std::cout << "Nothing found\n";
   }
