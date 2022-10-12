@@ -60,7 +60,7 @@ TEST(std_optional_test, in_place_test) {
   std::stringstream oss;
   testing::internal::CaptureStdout();
 
-  if (Res.has_value()) {
+  if (Res[0]) {
     std::cout << Res[0]->Upper << "at" << Res[0]->Pos << "\n";
   } else {
     std::cout << "Nothing found\n";
