@@ -28,7 +28,7 @@ struct CharInfo {
   CharInfo(char c, int i) : Upper(c), Pos(i) {}
   char Upper;
   int Pos;
-}
+};
 
 std::vector<std::optional<CharInfo>>
 findFirstUpper(const std::vector<std::string> &V) {
