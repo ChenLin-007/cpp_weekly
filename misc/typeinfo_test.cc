@@ -20,7 +20,7 @@ TEST(typeinfo_test, name_test) {
       << "int c type is i\n"
       << "unsigned d type is j\n";
 
-  std::string act_output = testing::internal::GetCaptureStdout();
+  std::string act_output = testing::internal::GetCapturedStdout();
 
   EXPECT_TRUE(act_output == oss.str());    
 }
