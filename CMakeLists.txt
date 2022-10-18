@@ -42,6 +42,7 @@ add_executable(cpp_weekly
         misc/optional_test.cc
         misc/typeinfo_test.cc
         template/using_template_test.cc
+        template/partial_specialization_test.cc
         )
 
 include_directories(include)
