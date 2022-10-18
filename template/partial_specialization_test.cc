@@ -25,3 +25,37 @@ TEST(partial_specialization, basic_test) {
 
   EXPECT_TRUE(act_output == oss.str());          
 }
+
+//############### 方式2：重载操作符 ###################################
+template <typename T> struct abs_functor {
+  T operator()(const T &X) { return X < T(0) ? -X : X; }
+};
+
+template <typename T> struct abs_functor<std::complex<T>> {
+  T operator() (const std::complex<T> &X) {
+    return std::sqrt(std::real(X) * std::real(X) + std::imag(X) * std::imag(X));
+  }
+};
+
+template <typename T> decltype(auto) my_abs_functor(const T &X) {
+  return abs_functor<T>()(X);
+}
+
+TEST(partial_specialization, reload_operator) {
+  std::complex<float> a{3, 4};
+  std::stringstream oss;
+  testing::internal::CaptureStdout();
+
+  std::cout << "::my_abs_functor(std::complex<float>(3, 4)) = "
+            << my_abs_functor(a)
+            << std::endl;
+  oss << "::my_abs_functor(std::complex<float>(3, 4)) = 5\n";
+
+  std::cout << "::my_abs_functor(-2) = "
+            << my_abs_functor(-2)
+            << std::endl;
+  oss << "::my_abs_functor(-2) = 2\n";
+
+  std::string act_output = testing::internal::GetCapturedStdout();
+  EXPECT_TRUE(act_output == oss.str());
+}
