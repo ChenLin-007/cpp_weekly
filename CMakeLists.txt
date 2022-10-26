@@ -3,8 +3,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 project(cpp_weekly)
 
-# GoogleTest requires at least C++14
-set(CMAKE_CXX_STANDARD 20)
+# GoogleTest requires at least C++23
+set(CMAKE_CXX_STANDARD 23)
 
 include(FetchContent)
 FetchContent_Declare(
@@ -17,7 +17,7 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-set(CMAKE_CXX_FLAGS "-std=c++2a")
+# set(CMAKE_CXX_FLAGS "-std=c++latest")
 enable_testing()
 
 file(GLOB_RECURSE cpp_weekly_srcs *.cc)
@@ -43,6 +43,7 @@ add_executable(cpp_weekly
         misc/typeinfo_test.cc
         template/using_template_test.cc
         template/partial_specialization_test.cc
+        template/invoke_and_bind_back.cc
         )
 
 include_directories(include)
