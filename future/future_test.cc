@@ -7,6 +7,8 @@
 #include <random>
 #include <iostream>
 
+using namespace std;
+
 std::set<int> make_sorted_random(const size_t num_elems) {
   std::set<int> retval;
   std::random_device rd;
