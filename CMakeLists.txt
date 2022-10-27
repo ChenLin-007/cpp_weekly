@@ -52,6 +52,7 @@ target_link_libraries(
         cpp_weekly
         GTest::gtest_main
         fmt
+        stdc++
 )
 
 include(GoogleTest)
