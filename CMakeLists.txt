@@ -51,6 +51,7 @@ include_directories(include)
 target_link_libraries(
         cpp_weekly
         GTest::gtest_main
+        fmt
 )
 
 include(GoogleTest)
