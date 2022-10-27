@@ -17,7 +17,7 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-# set(CMAKE_CXX_FLAGS "-std=c++latest")
+# set(CMAKE_CXX_FLAGS "-std=c++latest -stdlib=libc++ -lc++ -lc++abi")
 enable_testing()
 
 file(GLOB_RECURSE cpp_weekly_srcs *.cc)
