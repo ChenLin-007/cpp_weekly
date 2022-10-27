@@ -30,9 +30,7 @@ struct Point {
     return Point{x + displacement.x, y + displacement.y};
   }
 
-  void print() const {
-    fmt::format("{{{}, {}}}\n", x, y);
-  }
+  void print() const { fmt::format("{{{}, {}}}\n", x, y); }
 };
 
 std::vector<Point> get_data() { return {{1,2}, {3,4}, {5,6}, {42,78}}; }
