@@ -37,7 +37,7 @@ TEST(std_future_test, basic_test) {
 }
 
 int add(int a, int b) {
-  std::cout << "work thread = " << std::this_thread::get_id() << std::endl;
+  std::cout << "work thread = " << std::this_thread::get_id() << "\n";
   std::this_thread::sleep_for(std::chrono::milliseconds(3000));
   return a + b;
 }
