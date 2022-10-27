@@ -5,6 +5,7 @@
 #include <gtest/gtest.h>
 #include <future>
 #include <random>
+#include <iostream>
 
 std::set<int> make_sorted_random(const size_t num_elems) {
   std::set<int> retval;
