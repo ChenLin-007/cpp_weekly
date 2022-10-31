@@ -52,4 +52,4 @@ jobs:
         # Build your program with the given configuration.
         working-directory: ${{github.workspace}}/build
         # Execute tests difined by the CMake configuration.
-        run: ctest -C ${{env.BUILD_TYPE}}
+        run: ctest -C -V ${{env.BUILD_TYPE}}
