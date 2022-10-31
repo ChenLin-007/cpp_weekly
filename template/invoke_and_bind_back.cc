@@ -42,13 +42,15 @@ TEST(std_bind_back, basic) {
 
   std::ranges::for_each(data, std::bind_back(&Point::displace, 6, 5));
   std::ranges::for_each(data, &Point::print);
-
+  
   oss << "{7, 7}\n"
       << "{9, 9}\n"
       << "{11, 11}\n"
       << "{48, 83}\n";
 
   std::string act_output = testing::internal::GetCapturedStdout();
+
+  std::cout << act_output;
 
   EXPECT_TRUE(act_output == oss.str());
 }
