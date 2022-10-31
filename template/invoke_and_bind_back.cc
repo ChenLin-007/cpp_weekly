@@ -50,7 +50,7 @@ TEST(std_bind_back, basic) {
 
   std::string act_output = testing::internal::GetCapturedStdout();
 
-  std::cout << act_output;
+  std::cout << "The Result: " << act_output;
 
   EXPECT_TRUE(act_output == oss.str());
 }
