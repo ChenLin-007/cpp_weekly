@@ -44,6 +44,7 @@ add_executable(cpp_weekly
         template/using_template_test.cc
         template/partial_specialization_test.cc
         template/invoke_and_bind_back.cc
+	template/Variadicfunc.cc
         )
 
 include_directories(include)
